@@ -29,7 +29,7 @@ To fetch and subscribe use:
 
 ```swift
   LocationManager.instance.getLocationAndSubscribe(name:String, retFunc: (CLLocation) -> Void)
-```swift
+```
 
 Subscribe returns value each time location is updated.
 
