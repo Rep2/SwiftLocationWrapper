@@ -4,17 +4,36 @@ Simple CLLocationWrapper that handles user interaction and location fetch.
 
 Contributions appreciated!
 
-## Use
+## Setup
 
 Add "LocationManager" class to your project.
 
-To get location call 
+Add "Privacy - Location Usage Description", "NSLocationAlwaysUsageDescription" and "NSLocationWhenInUseUsageDescription" to your plist file.
 
-  getLocation(retFunc: (CLLocation) -> Void)
 
-or to subscribe
+## Use
 
-  getLocationAndSubscribe(name:String, retFunc: (CLLocation) -> Void)
+Before fetching location test if location is available:
+
+```swift
+  LocationManager.instance.isAvailable
+```
+
+If location is available, fetch is using:
+
+```swift
+  LocationManager.instance.getLocation(retFunc: (CLLocation) -> Void)
+```
+
+To fetch and subscribe use:
+
+```swift
+  LocationManager.instance.getLocationAndSubscribe(name:String, retFunc: (CLLocation) -> Void)
+```
+
+Subscribe returns value each time location is updated.
+
+If location is not available you can still subscribe but will not get any data until user allows location service.
 
 
 For more information and configuration look at "LocationManager" class.
