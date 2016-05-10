@@ -29,9 +29,15 @@ To fetch and subscribe use:
 
 ```swift
   LocationManager.instance.getLocationAndSubscribe(name:String, retFunc: (CLLocation) -> Void)
-```
+```swift
 
 Subscribe returns value each time location is updated.
+
+Be sure to UNSUBSCRIBE using:
+
+```swift
+  removeSubscription(name:String)
+```
 
 If location is not available you can still subscribe but will not get any data until user allows location service.
 
